@@ -1,14 +1,16 @@
 import { useGetUsers } from "./Hooks/userGetUser";
 import Usercard from "../Atoms/Usercard";
+import './index.css'
 const Users =()=>{
-    const{Users,loading,errors} =useGetUsers();
-    console.log({Users});
+    const{users,loading,errors} =useGetUsers();
+    console.log({users});
 return(
     <div>
+    <div className="users">
  {loading&&<h2>loading users...</h2>}
  {errors.length>0 &&<h2>{errors}</h2>}
- {Users.length>0 
- ? Users.map((user)=>(
+ {users.length>0 
+ ? users.map((user)=>(
     <Usercard
     key={user.id}
     image={user.image}
@@ -18,6 +20,7 @@ return(
  ))
  :!loading&&<h2>Users not found</h2>
 }
+    </div>
     </div>
 )
 

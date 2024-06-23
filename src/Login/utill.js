@@ -1,13 +1,13 @@
 const baseUrl=process.env.REACT_APP_BASE_URL;
 
-export const login =async()=>{
+export const login = async ({username,password})=>{
     try{
    const response =await fetch(`${baseUrl}/auth/login`,{
     method:'POST',
     headers:{
 'content-Type':'application/json'
     },
-    body,json:Stringify({username,Userpassword})
+    body:JSON.stringify({username,password})
    });
    return response.json
     }

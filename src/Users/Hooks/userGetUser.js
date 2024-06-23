@@ -2,7 +2,7 @@ import { getUsers } from "../Utils";
 import { useState,useEffect } from "react";
 
 export const useGetUsers =() =>{
-    const [Users, setUsers] = useState ([]);
+    const [users, setUsers] = useState ([]);
     const[errors,setErrors]= useState('');
     const[loading,setLoading]=useState(false);
     useEffect(()=>{
@@ -10,7 +10,7 @@ export const useGetUsers =() =>{
             try{
                 setLoading(true);
                 const response =await getUsers();
-                setUsers(response.Users);
+                setUsers(response.users);
                 setLoading(false);
 
             }
@@ -22,6 +22,6 @@ export const useGetUsers =() =>{
         }
         fetchUsers();
     },[])
-    return{Users,loading,errors}
+    return{users,loading,errors}
 
 }

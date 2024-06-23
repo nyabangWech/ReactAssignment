@@ -1,13 +1,14 @@
-import'.index.css';
+import'./index.css';
 import { useState } from 'react';
 import { login } from './utill';
 
-const login =()=>{
-    const[Username,setUsername]=useState('');
+const Login =()=>{
+    const[username,setUsername]=useState('');
     const[password,setpassword]=useState('');
-    const handleSubmit =async(event)=>{
+    const handleSubmit = async(event)=>{
         event.preventDefault();
-        const results = await login({ Username, password });
+
+        const results = await login({ username, password });
          console.log({results});
     }
     
@@ -26,4 +27,4 @@ const login =()=>{
         </form>
     )
 }
-export default login;
+export default Login;
