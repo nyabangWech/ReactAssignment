@@ -1,6 +1,8 @@
 import Login from "./Login";
+import LoginPath from "./Loginpath";
 import Users from "./Users";
- 
+ import { Routes,Route,Link } from "react-router-dom";
+ import axios from "axios";
 
  export const Introduction=()=>{
   return(
@@ -9,14 +11,34 @@ import Users from "./Users";
  
 };
 
-const App=()=>{
+// const App=()=>{
+//   return(
+//     <div>
+//      <Login/>
+//      <Loginpath/>
+//      <nav>
+
+//      </nav>
+//      <Users/>
+//     </div>
+//   );
+// };
+
+
+function App(){
   return(
     <div>
-     <Login/>
-     <Users/>
+      <LoginPath/>
+      <nav>
+      <Link to="/login"></Link>
+      </nav>
+      <Routes>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/users' element={<Users/>}/>
+      </Routes>
+      <modal></modal>
     </div>
-  );
-};
-
+  )
+}
 export default App;
 

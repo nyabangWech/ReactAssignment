@@ -15,6 +15,10 @@ return(
     key={user.id}
     image={user.image}
     fullName={`${user.firstname} ${user.lastname}`}
+    age={`${user.age}`}
+        gender={`${user.gender}`}
+        email={`${user.email}`}
+    
     />
 
  ))
